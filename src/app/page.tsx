@@ -1,66 +1,44 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Hero from '@/components/Sections/Hero/Hero';
+import Services from '@/components/Sections/Services/Services';
+import About from '@/components/Sections/About/About';
+import Portfolio from '@/components/Sections/Portfolio/Portfolio';
+import Technologies from '@/components/Sections/Technologies/Technologies';
+import Team from '@/components/Sections/Team/Team';
+import Testimonials from '@/components/Sections/Testimonials/Testimonials';
+import Blog from '@/components/Sections/Blog/Blog';
+import Contact from '@/components/Sections/Contact/Contact';
+import Navbar from '@/components/Navbar/Navbar';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Portfolio />
+        <Technologies />
+        <Team />
+        <Testimonials />
+        <Blog />
+        <Contact />
+      </main>
+      <footer
+        style={{
+          backgroundColor: 'var(--black)',
+          color: 'var(--gray-mid)',
+          padding: '2rem 0',
+          textAlign: 'center',
+          borderTop: '1px solid var(--gray-dark)',
+        }}>
+        <div className="container">
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            &copy; {new Date().getFullYear()} InfinityPoint LLC. All rights
+            reserved.
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </>
   );
 }
