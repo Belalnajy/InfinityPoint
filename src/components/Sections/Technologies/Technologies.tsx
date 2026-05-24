@@ -2,60 +2,57 @@
 
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
-
-const techs = [
-  'React',
-  'Next.js',
-  'TypeScript',
-  'Node.js',
-  'Python',
-  'Django',
-  'PostgreSQL',
-  'AWS',
-  'Docker',
-  'Kubernetes',
-];
+import OrbitingSkills from '@/components/ui/orbiting-skills';
 
 const Technologies = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-24 bg-zinc-900 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+    <section
+      id="technologies"
+      className="relative bg-neutral-950 text-white py-24 overflow-hidden"
+    >
+      {/* Background effects */}
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          className="text-center mb-14"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-medium text-neutral-400 mb-6"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            Full-Stack Expertise
+          </motion.div>
+          <h2 className="heading-section text-gradient-light">
             {t.tech.title}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-rose-500">
-              {t.tech.subtitle}
-            </span>
+            <span className="text-gradient-primary">{t.tech.subtitle}</span>
           </h2>
+          <p className="text-neutral-400 mt-4 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            From frontend frameworks to backend systems, DevOps pipelines to database architecture
+            — we bring deep expertise across the entire modern tech stack.
+          </p>
         </motion.div>
 
+        {/* Skills Marquee */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ staggerChildren: 0.05 }}
-          className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-          {techs.map((tech, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="bg-white/5 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full text-white font-semibold cursor-default hover:border-primary/50 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
-              {tech}
-            </motion.div>
-          ))}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <OrbitingSkills />
         </motion.div>
       </div>
     </section>

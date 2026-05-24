@@ -2,97 +2,150 @@
 
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
+import { Target, Eye, CheckCircle2 } from 'lucide-react';
 
 const About = () => {
   const { t } = useLanguage();
 
+  const stats = [
+    { val: '150+', label: t.about.delivered },
+    { val: '50+', label: t.about.developers },
+    { val: '99%', label: t.about.satisfaction },
+  ];
+
   return (
     <section
       id="about"
-      className="section-padding bg-white relative overflow-hidden py-24">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image/Stats Area */}
+      className="relative bg-neutral-950 text-white py-24 overflow-hidden">
+      {/* Background blobs */}
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-rose-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left: Image + floating stats */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             className="relative">
-            <div className="relative z-10 h-[500px] rounded-[2rem] overflow-hidden shadow-2xl group">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
+            <div className="relative z-10 h-[480px] sm:h-[540px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/40 group">
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
                 alt="Team working"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute bottom-8 left-8 right-8 z-20 text-white">
-                <div className="text-5xl font-bold mb-2">10+</div>
-                <p className="text-lg text-white/80">{t.about.years}</p>
+                <div className="text-6xl font-extrabold text-gradient-primary mb-2">
+                  10+
+                </div>
+                <p className="text-lg text-white/90 font-medium">
+                  {t.about.years}
+                </p>
               </div>
             </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-rose-500/10 rounded-full blur-3xl -z-10" />
+            {/* Floating accent card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="absolute -bottom-6 -right-4 lg:-right-8 bg-white/[0.08] backdrop-blur-md rounded-2xl shadow-xl shadow-black/20 border border-white/10 p-5 z-30">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-emerald-500/15 flex items-center justify-center">
+                  <CheckCircle2 size={20} className="text-emerald-400" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white">
+                    100% On-Time
+                  </div>
+                  <div className="text-xs text-white/50">Delivery Rate</div>
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-primary/15 rounded-full blur-3xl -z-10" />
+            <div className="absolute -top-12 -left-12 w-48 h-48 bg-rose-500/10 rounded-full blur-3xl -z-10" />
           </motion.div>
 
-          {/* Text Content */}
+          {/* Right: Content */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+            transition={{ duration: 0.7, delay: 0.15 }}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-medium text-neutral-400 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              Who We Are
+            </motion.div>
+
+            <h2 className="heading-section text-gradient-light">
               {t.about.title}{' '}
-              <span className="text-primary relative inline-block">
-                InfinityPoint
-                <svg
-                  className="absolute w-full h-3 -bottom-1 left-0 text-primary/20"
-                  viewBox="0 0 100 10"
-                  preserveAspectRatio="none">
-                  <path
-                    d="M0 5 Q 50 10 100 5"
-                    stroke="currentColor"
-                    strokeWidth="8"
-                    fill="none"
-                  />
-                </svg>
-              </span>
+              <span className="text-gradient-primary">InfinityPoint</span>
             </h2>
 
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="mt-6 text-lg leading-relaxed text-white/60">
               {t.about.text}
             </p>
 
-            <div className="grid grid-cols-3 gap-6 mb-10">
-              {[
-                { val: '150+', label: t.about.delivered },
-                { val: '50+', label: t.about.developers },
-                { val: '99%', label: t.about.satisfaction },
-              ].map((stat, i) => (
-                <div
-                  key={i}
-                  className="text-center p-4 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100">
-                  <h4 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-rose-600 mb-1">
+            {/* Stats row */}
+            <div className="mt-10 grid grid-cols-3 gap-4">
+              {stats.map((stat) => (
+                <motion.div
+                  key={stat.label}
+                  whileHover={{ y: -4 }}
+                  className="text-center p-5 rounded-2xl bg-white/[0.05] border border-white/10 hover:border-primary/30 transition-all duration-300">
+                  <div className="text-3xl font-extrabold text-gradient-primary mb-1">
                     {stat.val}
-                  </h4>
-                  <p className="text-sm text-gray-500 font-medium">
+                  </div>
+                  <p className="text-xs text-white/50 font-semibold uppercase tracking-wide">
                     {stat.label}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            <div className="space-y-6">
-              <div className="p-6 rounded-2xl bg-gray-50 border-l-4 border-primary">
-                <h3 className="text-xl font-bold mb-2">{t.about.mission}</h3>
-                <p className="text-gray-600">{t.about.missionText}</p>
-              </div>
-              <div className="p-6 rounded-2xl bg-gray-50 border-l-4 border-gray-900">
-                <h3 className="text-xl font-bold mb-2">{t.about.vision}</h3>
-                <p className="text-gray-600">{t.about.visionText}</p>
-              </div>
+            {/* Mission & Vision */}
+            <div className="mt-10 space-y-4">
+              <motion.div
+                whileHover={{ x: 4 }}
+                className="p-6 rounded-2xl bg-white/[0.05] border border-white/10 border-l-4 border-l-primary flex gap-4 hover:bg-white/[0.08] transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center flex-shrink-0">
+                  <Target size={22} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-1">
+                    {t.about.mission}
+                  </h3>
+                  <p className="text-white/60 leading-relaxed">
+                    {t.about.missionText}
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div
+                whileHover={{ x: 4 }}
+                className="p-6 rounded-2xl bg-white/[0.05] border border-white/10 border-l-4 border-l-white/30 flex gap-4 hover:bg-white/[0.08] transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-white/10 text-white flex items-center justify-center flex-shrink-0">
+                  <Eye size={22} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-1">
+                    {t.about.vision}
+                  </h3>
+                  <p className="text-white/60 leading-relaxed">
+                    {t.about.visionText}
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

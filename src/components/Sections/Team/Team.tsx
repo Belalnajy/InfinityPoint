@@ -2,102 +2,78 @@
 
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
-import { Linkedin, Twitter, Github } from 'lucide-react';
+import {
+  ProfileCardCarousel,
+  type TeamMember,
+} from '@/components/ui/profile-card-testimonial-carousel';
 
-const team = [
+const teamStatic = [
   {
-    name: 'Alex Johnson',
-    role: 'CEO & Founder',
-    image:
-      'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop',
+    name: 'Ahmed Ezzeldien',
+    imageUrl: '/our-team/ezz.png',
+    linkedinUrl: 'https://www.linkedin.com/in/ahmeezzel-deen/',
   },
   {
-    name: 'Sarah Chen',
-    role: 'CTO',
-    image:
-      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop',
+    name: 'Belal Nagy',
+    imageUrl: '/our-team/belalnagy.jpg',
+    linkedinUrl: 'https://www.linkedin.com/in/belalnajy/',
+    githubUrl: 'https://github.com/belalnajy',
   },
   {
-    name: 'Michael Ross',
-    role: 'Lead Developer',
-    image:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&auto=format&fit=crop',
+    name: 'Ahmed Lebda',
+    imageUrl: '/our-team/lebda.jpg',
+    linkedinUrl: 'https://www.linkedin.com/in/ahmed-lebda/',
+    githubUrl: 'https://github.com/AhmedLebda',
   },
   {
-    name: 'Elena Rodriguez',
-    role: 'UX Director',
-    image:
-      'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop',
+    name: 'Ahmed Mohamed',
+    imageUrl: '/our-team/marhba.jpg',
+    linkedinUrl: 'https://www.linkedin.com/in/ahmed-mohamed-el-said/',
+    githubUrl: 'https://github.com/AhmedMoh96',
   },
 ];
 
 const Team = () => {
   const { t } = useLanguage();
 
+  const team: TeamMember[] = teamStatic.map((member, i) => ({
+    ...member,
+    title: t.team.members[i].title,
+    description: t.team.members[i].description,
+  }));
+
   return (
-    <section id="team" className="py-24 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section
+      id="team"
+      className="relative bg-neutral-950 text-white py-24 overflow-hidden"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-15" />
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/6 rounded-full blur-[160px] pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+          className="text-center mb-16"
+        >
+          <h2 className="heading-section text-gradient-light">
             {t.team.title}{' '}
-            <span className="text-primary">{t.team.subtitle}</span>
+            <span className="text-gradient-primary">{t.team.subtitle}</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-5 text-lg text-neutral-400 max-w-2xl mx-auto">
             {t.team.desc}
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {team.map((member, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
-              <div className="relative h-80 overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-
-                {/* Social Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                  <a
-                    href="#"
-                    className="bg-white text-gray-900 p-2 rounded-full hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
-                    <Linkedin size={20} />
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-white text-gray-900 p-2 rounded-full hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 delay-100">
-                    <Twitter size={20} />
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-white text-gray-900 p-2 rounded-full hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 delay-150">
-                    <Github size={20} />
-                  </a>
-                </div>
-              </div>
-
-              <div className="p-6 text-center">
-                <h4 className="text-xl font-bold text-gray-900 mb-1">
-                  {member.name}
-                </h4>
-                <p className="text-primary font-medium text-sm uppercase tracking-wide">
-                  {member.role}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <ProfileCardCarousel members={team} variant="dark" />
+        </motion.div>
       </div>
     </section>
   );

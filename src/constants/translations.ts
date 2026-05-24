@@ -70,11 +70,52 @@ export const translations = {
       title: 'Our',
       subtitle: 'Portfolio',
       desc: 'Showcasing our recent success stories and technical excellence.',
+      viewLive: 'View Live',
+      showMore: 'Show More Projects',
+      showLess: 'Show Less',
       categories: {
-        web: 'Web Development',
-        mobile: 'Mobile App',
-        design: 'UI/UX Design',
+        all: 'All',
+        fullStack: 'Full Stack',
+        frontend: 'Frontend',
       },
+    },
+    products: {
+      badge: 'Our Products',
+      title: 'Products We',
+      subtitle: 'Build',
+      desc: 'Innovative digital platforms designed and developed in-house to solve real-world industry challenges.',
+    },
+    whatWeOffer: {
+      badge: 'Why Choose Us',
+      title: 'What We',
+      subtitle: 'Offer',
+      desc: 'From concept to deployment and beyond — we provide comprehensive solutions tailored to accelerate your business growth.',
+      items: [
+        {
+          title: 'Custom Software Development',
+          desc: 'Bespoke applications built from the ground up, designed to solve your unique challenges and scale with your ambitions.',
+        },
+        {
+          title: 'Product Development',
+          desc: 'End-to-end product lifecycle management — from ideation and MVP to launch and iteration.',
+        },
+        {
+          title: 'Team Augmentation',
+          desc: 'Extend your in-house capabilities with our skilled engineers who integrate seamlessly with your workflow.',
+        },
+        {
+          title: 'Ongoing Support & Maintenance',
+          desc: 'Reliable post-launch support, performance monitoring, and continuous improvement to keep your systems running smoothly.',
+        },
+        {
+          title: 'Security & Compliance',
+          desc: 'Enterprise-grade security practices, data protection, and regulatory compliance baked into every solution.',
+        },
+        {
+          title: 'Data & Analytics',
+          desc: 'Turn raw data into actionable insights with custom dashboards, reporting tools, and intelligent analytics.',
+        },
+      ],
     },
     tech: {
       title: 'Technologies We',
@@ -84,6 +125,24 @@ export const translations = {
       title: 'Meet Our',
       subtitle: 'Experts',
       desc: 'A global team of passionate innovators and problem solvers.',
+      members: [
+        {
+          title: 'CEO & Founder',
+          description: 'Visionary leader driving InfinityPoint\'s mission to deliver innovative, scalable software solutions. Ahmed combines strategic business acumen with deep technical expertise to empower businesses and lead the company toward new frontiers of digital excellence.',
+        },
+        {
+          title: 'Co-Founder & Software Engineer',
+          description: 'Full-stack engineer and co-founder with a passion for building robust, high-performance systems. Belal architects scalable solutions across the entire tech stack, from backend infrastructure to polished user interfaces.',
+        },
+        {
+          title: 'Software Engineer',
+          description: 'Dedicated software engineer specializing in crafting clean, maintainable code and delivering feature-rich applications. Ahmed brings strong problem-solving skills and a commitment to engineering excellence.',
+        },
+        {
+          title: 'Software Tester',
+          description: 'Quality-focused software tester ensuring every product meets the highest standards of reliability and performance. Ahmed designs thorough test strategies that catch edge cases and guarantee seamless user experiences.',
+        },
+      ],
     },
     testimonials: {
       title: 'What Our',
@@ -107,6 +166,12 @@ export const translations = {
       desc: 'Exploring the frontiers of technology and innovation.',
       readMore: 'Read More',
       back: 'Back to Blog',
+    },
+    partners: {
+      badge: 'Trusted By Leaders',
+      title: 'Success',
+      subtitle: 'Partners',
+      desc: 'We are proud to collaborate with leading organizations that drive innovation and digital transformation.',
     },
   },
   ar: {
@@ -178,11 +243,52 @@ export const translations = {
       title: 'معرض',
       subtitle: 'أعمالنا',
       desc: 'عرض لقصص نجاحنا الأخيرة والتميز التقني.',
+      viewLive: 'عرض مباشر',
+      showMore: 'عرض المزيد من المشاريع',
+      showLess: 'عرض أقل',
       categories: {
-        web: 'تطوير الويب',
-        mobile: 'تطبيق جوال',
-        design: 'تصميم واجهة المستخدم',
+        all: 'الكل',
+        fullStack: 'فول ستاك',
+        frontend: 'واجهة أمامية',
       },
+    },
+    products: {
+      badge: 'منتجاتنا',
+      title: 'منتجات',
+      subtitle: 'نبتكرها',
+      desc: 'منصات رقمية مبتكرة مصممة ومطورة داخلياً لحل تحديات الصناعة الحقيقية.',
+    },
+    whatWeOffer: {
+      badge: 'لماذا نحن',
+      title: 'ماذا',
+      subtitle: 'نقدم',
+      desc: 'من الفكرة إلى الإطلاق وما بعده — نقدم حلولاً شاملة مصممة لتسريع نمو أعمالك.',
+      items: [
+        {
+          title: 'تطوير برمجيات مخصصة',
+          desc: 'تطبيقات مبنية من الصفر، مصممة لحل تحدياتك الفريدة والنمو مع طموحاتك.',
+        },
+        {
+          title: 'تطوير المنتجات',
+          desc: 'إدارة دورة حياة المنتج الكاملة — من الفكرة والنموذج الأولي إلى الإطلاق والتطوير المستمر.',
+        },
+        {
+          title: 'تعزيز الفريق',
+          desc: 'وسّع قدرات فريقك الداخلي بمهندسينا المهرة الذين يندمجون بسلاسة مع سير عملك.',
+        },
+        {
+          title: 'الدعم والصيانة المستمرة',
+          desc: 'دعم موثوق بعد الإطلاق، مراقبة الأداء، وتحسين مستمر لضمان عمل أنظمتك بسلاسة.',
+        },
+        {
+          title: 'الأمان والامتثال',
+          desc: 'ممارسات أمان على مستوى المؤسسات، حماية البيانات، والامتثال التنظيمي مدمجة في كل حل.',
+        },
+        {
+          title: 'البيانات والتحليلات',
+          desc: 'حوّل البيانات الخام إلى رؤى قابلة للتنفيذ مع لوحات تحكم مخصصة وأدوات تحليل ذكية.',
+        },
+      ],
     },
     tech: {
       title: 'تقنيات نتميز',
@@ -192,6 +298,24 @@ export const translations = {
       title: 'تعرف على',
       subtitle: 'خبرائنا',
       desc: 'فريق عالمي من المبتكرين الشغوفين وحلالي المشاكل.',
+      members: [
+        {
+          title: 'الرئيس التنفيذي والمؤسس',
+          description: 'قائد صاحب رؤية يقود مهمة InfinityPoint لتقديم حلول برمجية مبتكرة وقابلة للتوسع. يجمع أحمد بين الفطنة التجارية الاستراتيجية والخبرة التقنية العميقة لتمكين الشركات وقيادة الشركة نحو آفاق جديدة من التميز الرقمي.',
+        },
+        {
+          title: 'شريك مؤسس ومهندس برمجيات',
+          description: 'مهندس برمجيات متكامل وشريك مؤسس شغوف ببناء أنظمة قوية وعالية الأداء. يصمم بلال حلولاً قابلة للتوسع عبر جميع طبقات التكنولوجيا، من البنية التحتية الخلفية إلى واجهات المستخدم المصقولة.',
+        },
+        {
+          title: 'مهندس برمجيات',
+          description: 'مهندس برمجيات متخصص في كتابة كود نظيف وقابل للصيانة وتقديم تطبيقات غنية بالمميزات. يتمتع أحمد بمهارات قوية في حل المشكلات والتزام بالتميز الهندسي.',
+        },
+        {
+          title: 'مهندس اختبار برمجيات',
+          description: 'مهندس اختبار يركز على الجودة لضمان أن كل منتج يلبي أعلى معايير الموثوقية والأداء. يصمم أحمد استراتيجيات اختبار شاملة تكشف الحالات الطرفية وتضمن تجربة مستخدم سلسة.',
+        },
+      ],
     },
     testimonials: {
       title: 'ماذا يقول',
@@ -215,6 +339,12 @@ export const translations = {
       desc: 'استكشاف آفاق التكنولوجيا والابتكار.',
       readMore: 'اقرأ المزيد',
       back: 'العودة للمدونة',
+    },
+    partners: {
+      badge: 'شركاء موثوقون',
+      title: 'شركاء',
+      subtitle: 'النجاح',
+      desc: 'نفخر بالتعاون مع المؤسسات الرائدة التي تقود الابتكار والتحول الرقمي.',
     },
   },
 };

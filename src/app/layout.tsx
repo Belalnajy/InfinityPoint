@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Outfit, Cairo } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
+import CustomCursor from '@/components/ui/custom-cursor';
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 const cairo = Cairo({ subsets: ['arabic'], variable: '--font-cairo' });
@@ -33,8 +34,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${outfit.variable} ${cairo.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${outfit.variable} ${cairo.variable} lg:cursor-none`}
+        suppressHydrationWarning>
+        <CustomCursor />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
