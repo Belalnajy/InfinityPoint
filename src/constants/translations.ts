@@ -142,6 +142,10 @@ export const translations = {
           title: 'Software Tester',
           description: 'Quality-focused software tester ensuring every product meets the highest standards of reliability and performance. Ahmed designs thorough test strategies that catch edge cases and guarantee seamless user experiences.',
         },
+        {
+          title: 'Software Tester',
+          description: 'Detail-oriented software tester dedicated to delivering flawless digital experiences. Ehab combines meticulous manual testing with automated quality assurance to ensure every feature works exactly as intended.',
+        },
       ],
     },
     testimonials: {
@@ -314,6 +318,10 @@ export const translations = {
         {
           title: 'مهندس اختبار برمجيات',
           description: 'مهندس اختبار يركز على الجودة لضمان أن كل منتج يلبي أعلى معايير الموثوقية والأداء. يصمم أحمد استراتيجيات اختبار شاملة تكشف الحالات الطرفية وتضمن تجربة مستخدم سلسة.',
+        },
+        {
+          title: 'مهندس اختبار برمجيات',
+          description: 'مهندس اختبار دقيق ملتزم بتقديم تجارب رقمية خالية من الأخطاء. يجمع إيهاب بين الاختبار اليدوي الدقيق وضمان الجودة الآلي لضمان عمل كل ميزة بالشكل المطلوب تماماً.',
         },
       ],
     },

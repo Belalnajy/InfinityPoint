@@ -31,6 +31,10 @@ const teamStatic = [
     linkedinUrl: 'https://www.linkedin.com/in/ahmed-mohamed-el-said/',
     githubUrl: 'https://github.com/AhmedMoh96',
   },
+  {
+    name: 'Ehab',
+    imageUrl: '/our-team/ehab.jpg',
+  },
 ];
 
 const Team = () => {
