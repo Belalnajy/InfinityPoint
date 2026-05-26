@@ -16,6 +16,7 @@ const About = () => {
   return (
     <section
       id="about"
+      data-cursor-lg
       className="relative bg-neutral-950 text-white py-24 overflow-hidden">
       {/* Background blobs */}
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />

@@ -58,7 +58,6 @@ const Numbers = () => {
   return (
     <section
       ref={containerRef}
-      data-cursor-lg
       className="relative bg-neutral-950 py-24 overflow-hidden"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-15" />

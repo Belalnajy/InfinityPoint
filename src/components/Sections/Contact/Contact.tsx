@@ -65,6 +65,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
+      data-cursor-lg
       className="relative bg-black text-white py-24 overflow-hidden"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
@@ -100,7 +101,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto items-stretch">
           {/* Contact Info Cards */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -199,10 +200,10 @@ const Contact = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-5 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl p-7"
+            className="flex flex-col bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl p-7"
             onSubmit={handleSubmit}
           >
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-5 mb-5">
               <div className="space-y-2">
                 <label className="text-white/60 text-[10px] font-semibold uppercase tracking-[0.15em]">
                   {t.contact.namePlaceholder}
@@ -231,7 +232,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="flex-1 flex flex-col space-y-2 mb-5">
               <label className="text-white/60 text-[10px] font-semibold uppercase tracking-[0.15em]">
                 {t.contact.messagePlaceholder}
               </label>
@@ -240,7 +241,7 @@ const Contact = () => {
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-white/20 resize-none text-sm"
+                className="flex-1 min-h-[140px] w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-white/20 resize-none text-sm"
                 placeholder={t.contact.messagePlaceholder}
               />
             </div>

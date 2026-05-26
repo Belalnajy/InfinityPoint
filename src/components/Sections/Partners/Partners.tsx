@@ -10,6 +10,11 @@ const partners = [
     nameEn: 'Ministry of Communications and Information Technology',
     logo: '/comm.png',
   },
+  {
+    name: 'كرييتيفا',
+    nameEn: 'Creativa',
+    logo: '/creativa.png',
+  },
 ];
 
 const Partners = () => {
@@ -54,7 +59,7 @@ const Partners = () => {
         </motion.div>
 
         {/* Partners Grid */}
-        <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {partners.map((partner, index) => (
             <motion.div
               key={index}
@@ -65,18 +70,18 @@ const Partners = () => {
               whileHover={{ y: -6, scale: 1.02 }}
               className="group relative"
             >
-              <div className="relative p-8 md:p-10 rounded-3xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-md border border-white/10 hover:border-primary/30 transition-all duration-500 flex flex-col items-center gap-6 min-w-[280px] max-w-[400px]">
+              <div className="relative p-8 md:p-10 rounded-3xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-md border border-white/10 hover:border-primary/30 transition-all duration-500 flex flex-col items-center gap-6 h-full">
                 {/* Glow effect on hover */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Logo Container */}
+                {/* Logo Container - fixed height for consistency */}
                 <div className="relative w-full flex items-center justify-center py-4">
-                  <div className="relative p-6 rounded-2xl bg-white/[0.95] shadow-lg shadow-white/5 group-hover:shadow-primary/10 transition-all duration-500">
+                  <div className="relative w-full h-28 rounded-2xl bg-white/[0.95] shadow-lg shadow-white/5 group-hover:shadow-primary/10 transition-all duration-500 flex items-center justify-center px-6">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={partner.logo}
                       alt={partner.nameEn}
-                      className="h-20 md:h-24 w-auto object-contain"
+                      className="max-h-20 w-auto object-contain"
                     />
                   </div>
                 </div>

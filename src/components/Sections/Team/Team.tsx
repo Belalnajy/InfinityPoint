@@ -54,6 +54,7 @@ const Team = () => {
   return (
     <section
       id="team"
+      data-cursor-lg
       className="relative bg-neutral-950 text-white py-24 overflow-hidden"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-15" />

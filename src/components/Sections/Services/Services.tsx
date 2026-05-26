@@ -25,9 +25,9 @@ const Services = () => {
 
   return (
     <section
+      data-cursor-lg
       id="services"
-      className="relative bg-neutral-950 text-white py-28 overflow-hidden"
-    >
+      className="relative bg-neutral-950 text-white py-28 overflow-hidden">
       {/* Background effects */}
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[200px] pointer-events-none" />
@@ -39,24 +39,20 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
-        >
+          className="text-center mb-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-medium text-neutral-400 mb-6"
-          >
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-medium text-neutral-400 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             {language === 'ar' ? 'ماذا نقدم' : 'What We Do'}
           </motion.div>
 
           <h2 className="heading-section text-gradient-light">
             {t.services.title}{' '}
-            <span className="text-gradient-primary">
-              {t.services.subtitle}
-            </span>
+            <span className="text-gradient-primary">{t.services.subtitle}</span>
           </h2>
           <p className="text-neutral-400 mt-5 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             {language === 'ar'
@@ -71,8 +67,7 @@ const Services = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-3 mb-8"
-          >
+            className="flex items-center gap-3 mb-8">
             <div className="w-10 h-[2px] bg-primary rounded-full" />
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-neutral-400">
               {language === 'ar' ? 'تخصصاتنا' : 'Our Expertise'}
@@ -80,39 +75,40 @@ const Services = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {t.services.items.map((service: { title: string; desc: string }, index: number) => {
-              const Icon = serviceIcons[index] || Lightbulb;
+            {t.services.items.map(
+              (service: { title: string; desc: string }, index: number) => {
+                const Icon = serviceIcons[index] || Lightbulb;
 
-              return (
-                <motion.div
-                  key={`service-${index}`}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.07 }}
-                  className="group relative p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/25 transition-all duration-500 overflow-hidden"
-                >
-                  {/* Hover glow */}
-                  <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 rounded-full blur-[80px] bg-primary/0 group-hover:bg-primary/10 transition-all duration-700" />
+                return (
+                  <motion.div
+                    key={`service-${index}`}
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.07 }}
+                    className="group relative p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/25 transition-all duration-500 overflow-hidden">
+                    {/* Hover glow */}
+                    <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 rounded-full blur-[80px] bg-primary/0 group-hover:bg-primary/10 transition-all duration-700" />
 
-                  <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-white/[0.05] border border-white/[0.08] group-hover:bg-primary group-hover:border-primary flex items-center justify-center mb-6 transition-all duration-300">
-                      <Icon
-                        size={24}
-                        strokeWidth={1.5}
-                        className="text-white/60 group-hover:text-white transition-colors duration-300"
-                      />
+                    <div className="relative z-10">
+                      <div className="w-14 h-14 rounded-2xl bg-white/[0.05] border border-white/[0.08] group-hover:bg-primary group-hover:border-primary flex items-center justify-center mb-6 transition-all duration-300">
+                        <Icon
+                          size={24}
+                          strokeWidth={1.5}
+                          className="text-white/60 group-hover:text-white transition-colors duration-300"
+                        />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-3">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-white/35 leading-relaxed group-hover:text-white/50 transition-colors duration-300">
+                        {service.desc}
+                      </p>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-white/35 leading-relaxed group-hover:text-white/50 transition-colors duration-300">
-                      {service.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                );
+              },
+            )}
           </div>
         </div>
 
@@ -129,8 +125,7 @@ const Services = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-3 mb-8"
-          >
+            className="flex items-center gap-3 mb-8">
             <div className="w-10 h-[2px] bg-primary rounded-full" />
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-neutral-400">
               {t.whatWeOffer.badge}
@@ -150,8 +145,7 @@ const Services = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.08, duration: 0.5 }}
                     whileHover={{ y: -6 }}
-                    className="group relative rounded-2xl p-7 bg-white/[0.04] backdrop-blur-sm border border-white/[0.07] hover:border-primary/30 hover:bg-white/[0.07] transition-all duration-500"
-                  >
+                    className="group relative rounded-2xl p-7 bg-white/[0.04] backdrop-blur-sm border border-white/[0.07] hover:border-primary/30 hover:bg-white/[0.07] transition-all duration-500">
                     {/* Hover glow */}
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -172,7 +166,7 @@ const Services = () => {
                     </div>
                   </motion.div>
                 );
-              }
+              },
             )}
           </div>
         </div>
