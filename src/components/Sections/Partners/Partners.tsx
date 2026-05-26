@@ -11,7 +11,7 @@ const partners = [
     logo: '/comm.png',
   },
   {
-    name: 'كرييتيفا',
+    name: 'مراكز ابداع مصر الرقمية',
     nameEn: 'Creativa',
     logo: '/creativa.png',
   },
@@ -23,8 +23,7 @@ const Partners = () => {
   return (
     <section
       id="partners"
-      className="relative bg-neutral-950 text-white py-24 overflow-hidden"
-    >
+      className="relative bg-neutral-950 text-white py-24 overflow-hidden">
       {/* Background effects */}
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/6 rounded-full blur-[200px] pointer-events-none" />
@@ -37,15 +36,13 @@ const Partners = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+          className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-medium text-neutral-400 mb-6"
-          >
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-medium text-neutral-400 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             {t.partners.badge}
           </motion.div>
@@ -68,8 +65,7 @@ const Partners = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               whileHover={{ y: -6, scale: 1.02 }}
-              className="group relative"
-            >
+              className="group relative">
               <div className="relative p-8 md:p-10 rounded-3xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-md border border-white/10 hover:border-primary/30 transition-all duration-500 flex flex-col items-center gap-6 h-full">
                 {/* Glow effect on hover */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -91,7 +87,9 @@ const Partners = () => {
                   <h3 className="text-white font-bold text-lg md:text-xl">
                     {partner.nameEn}
                   </h3>
-                  <p className="text-neutral-400 text-sm font-medium font-cairo" dir="rtl">
+                  <p
+                    className="text-neutral-400 text-sm font-medium font-cairo"
+                    dir="rtl">
                     {partner.name}
                   </p>
                 </div>
