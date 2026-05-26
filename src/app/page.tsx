@@ -2,7 +2,6 @@ import Hero from '@/components/Sections/Hero/Hero';
 import ClientLogos from '@/components/Sections/ClientLogos/ClientLogos';
 import About from '@/components/Sections/About/About';
 import Numbers from '@/components/Sections/Numbers/Numbers';
-import WhatWeOffer from '@/components/Sections/WhatWeOffer/WhatWeOffer';
 import Services from '@/components/Sections/Services/Services';
 import Products from '@/components/Sections/Products/Products';
 import Portfolio from '@/components/Sections/Portfolio/Portfolio';
@@ -25,7 +24,6 @@ export default function Home() {
         <ClientLogos />
         <About />
         <Numbers />
-        <WhatWeOffer />
         <Services />
         <Products />
         <Portfolio />
