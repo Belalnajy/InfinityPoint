@@ -12,11 +12,13 @@ import Testimonials from '@/components/Sections/Testimonials/Testimonials';
 import Partners from '@/components/Sections/Partners/Partners';
 import Contact from '@/components/Sections/Contact/Contact';
 import Navbar from '@/components/Navbar/Navbar';
+import FloatingButtons from '@/components/FloatingButtons/FloatingButtons';
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <FloatingButtons />
       <main suppressHydrationWarning>
         <Hero />
         <ClientLogos />

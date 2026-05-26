@@ -35,6 +35,11 @@ const teamStatic = [
     name: 'Ehab',
     imageUrl: '/our-team/ehab.jpg',
   },
+  {
+    name: 'Basma El Wazzan',
+    linkedinUrl: 'https://www.linkedin.com/in/basmaelwazzan/',
+    behanceUrl: 'https://www.behance.net/bassmaelwazzan',
+  },
 ];
 
 const Team = () => {

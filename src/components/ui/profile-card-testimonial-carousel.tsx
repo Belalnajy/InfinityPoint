@@ -10,6 +10,7 @@ import {
   Linkedin,
   ChevronLeft,
   ChevronRight,
+  Palette,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -17,10 +18,11 @@ export interface TeamMember {
   name: string;
   title: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string;
   githubUrl?: string;
   twitterUrl?: string;
   linkedinUrl?: string;
+  behanceUrl?: string;
 }
 
 export interface ProfileCardCarouselProps {
@@ -50,7 +52,12 @@ export function ProfileCardCarousel({
     { icon: Github, url: current.githubUrl, label: "GitHub" },
     { icon: Twitter, url: current.twitterUrl, label: "Twitter" },
     { icon: Linkedin, url: current.linkedinUrl, label: "LinkedIn" },
+    { icon: Palette, url: current.behanceUrl, label: "Behance" },
   ].filter((s) => s.url);
+
+  // Generate initials for avatar fallback
+  const getInitials = (name: string) =>
+    name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
 
   return (
     <div className={cn("w-full max-w-5xl mx-auto px-4", className)}>
@@ -74,15 +81,21 @@ export function ProfileCardCarousel({
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="w-full h-full"
             >
-              <Image
-                src={current.imageUrl}
-                alt={current.name}
-                width={420}
-                height={420}
-                className="w-full h-full object-cover"
-                draggable={false}
-                priority
-              />
+              {current.imageUrl ? (
+                <Image
+                  src={current.imageUrl}
+                  alt={current.name}
+                  width={420}
+                  height={420}
+                  className="w-full h-full object-cover"
+                  draggable={false}
+                  priority
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-rose-600/20">
+                  <span className="text-7xl font-bold text-white/40">{getInitials(current.name)}</span>
+                </div>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -178,15 +191,21 @@ export function ProfileCardCarousel({
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="w-full h-full"
             >
-              <Image
-                src={current.imageUrl}
-                alt={current.name}
-                width={400}
-                height={400}
-                className="w-full h-full object-cover"
-                draggable={false}
-                priority
-              />
+              {current.imageUrl ? (
+                <Image
+                  src={current.imageUrl}
+                  alt={current.name}
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover"
+                  draggable={false}
+                  priority
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-rose-600/20">
+                  <span className="text-6xl font-bold text-white/40">{getInitials(current.name)}</span>
+                </div>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>

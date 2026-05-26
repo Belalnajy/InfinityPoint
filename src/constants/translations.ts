@@ -146,6 +146,10 @@ export const translations = {
           title: 'Software Tester',
           description: 'Detail-oriented software tester dedicated to delivering flawless digital experiences. Ehab combines meticulous manual testing with automated quality assurance to ensure every feature works exactly as intended.',
         },
+        {
+          title: 'UI/UX Designer',
+          description: 'Creative UI/UX designer with a keen eye for aesthetics and user-centric design. Basma transforms complex requirements into intuitive, visually stunning interfaces that enhance user engagement and deliver seamless digital experiences.',
+        },
       ],
     },
     testimonials: {
@@ -322,6 +326,10 @@ export const translations = {
         {
           title: 'مهندس اختبار برمجيات',
           description: 'مهندس اختبار دقيق ملتزم بتقديم تجارب رقمية خالية من الأخطاء. يجمع إيهاب بين الاختبار اليدوي الدقيق وضمان الجودة الآلي لضمان عمل كل ميزة بالشكل المطلوب تماماً.',
+        },
+        {
+          title: 'مصممة واجهات المستخدم',
+          description: 'مصممة UI/UX مبدعة تتمتع بعين ثاقبة للجماليات والتصميم المرتكز على المستخدم. تحوّل بسمة المتطلبات المعقدة إلى واجهات بديهية ومذهلة بصرياً تعزز تفاعل المستخدم وتقدم تجارب رقمية سلسة.',
         },
       ],
     },
